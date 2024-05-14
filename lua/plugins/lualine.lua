@@ -49,6 +49,7 @@ return {
           normal = { c = { fg = colors.fg, bg = colors.bg } },
           inactive = { c = { fg = colors.fg, bg = colors.bg } },
         },
+        disabled_filetypes = {'neo-tree'}
       },
       sections = {
         -- these are to remove the defaults
