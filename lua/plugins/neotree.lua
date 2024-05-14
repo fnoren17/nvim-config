@@ -9,10 +9,22 @@ return {
 	config = function()
 		require("neo-tree").setup({
 			window = { position = "left" },
+			event_handlers = {
+				{
+					event = "vim_buffer_enter",
+					handler = function()
+						if vim.bo.filetype == "neo-tree" then
+							vim.cmd("setlocal nonumber")
+						else
+							vim.cmd("setlocal number")
+						end
+					end,
+				},
+			},
 			filesystem = {
-        follow_current_file = {
-          enabled = true
-        },
+				follow_current_file = {
+					enabled = true,
+				},
 				filtered_items = {
 					visible = true,
 					hide_dotfiles = false,
@@ -20,6 +32,9 @@ return {
 					never_show = { ".git" },
 				},
 			},
+		})
+		vim.api.nvim_create_autocmd("VimEnter", {
+			command = "set nornu nonu | Neotree toggle",
 		})
 		vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
 	end,

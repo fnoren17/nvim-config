@@ -11,7 +11,7 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "denols", "intelephense", "emmet_language_server" },
+        ensure_installed = { "lua_ls", "tsserver", "intelephense", "emmet_language_server" },
       })
     end,
   },
@@ -24,7 +24,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
-      lspconfig.denols.setup({
+      lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
       lspconfig.intelephense.setup({

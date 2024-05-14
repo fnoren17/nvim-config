@@ -9,4 +9,5 @@ This is my setup for neovim. I've just started and will be adding more when I ha
 - none-ls
 - telescope
 - mason
-- catppuccin
+- palenightfall
+- telescope
